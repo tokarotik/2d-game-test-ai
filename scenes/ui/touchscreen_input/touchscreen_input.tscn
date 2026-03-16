@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://pyc1rycrvija"]
+
+[ext_resource type="PackedScene" uid="uid://bw8gyva5ewuqf" path="res://scenes/ui/touchbutton/touchbutton.tscn" id="1_p7f22"]
+
+[node name="TouchscreenInput" type="Node2D"]
+
+[node name="Control" type="CanvasLayer" parent="."]
+
+[node name="up" parent="Control" instance=ExtResource("1_p7f22")]
+position = Vector2(984, 536)
+scale = Vector2(2, 2.685)
+action = "up"
+text = "UP"
+
+[node name="down" parent="Control" instance=ExtResource("1_p7f22")]
+position = Vector2(768, 536)
+scale = Vector2(2, 2.685)
+action = "down"
+text = "DOWN"
+
+[node name="right" parent="Control" instance=ExtResource("1_p7f22")]
+position = Vector2(264, 536)
+scale = Vector2(2, 2.685)
+action = "right"
+text = "RIGHT"
+
+[node name="left" parent="Control" instance=ExtResource("1_p7f22")]
+position = Vector2(64, 536)
+scale = Vector2(2, 2.685)
+action = "left"
+text = "LEFT"
