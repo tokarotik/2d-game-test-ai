@@ -17,6 +17,7 @@ offset_left = 931.0
 offset_top = 506.0
 offset_right = 961.568
 offset_bottom = 537.208
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "UP"
 
@@ -28,6 +29,7 @@ offset_left = 906.0
 offset_top = 579.0
 offset_right = 993.568
 offset_bottom = 610.208
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "DOWN
 "
@@ -40,6 +42,7 @@ offset_left = 267.0
 offset_top = 590.0
 offset_right = 346.568
 offset_bottom = 621.208
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "RIGHT
 "
@@ -52,6 +55,7 @@ offset_left = 30.0
 offset_top = 596.0
 offset_right = 106.128
 offset_bottom = 627.208
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "LEFT
 "
