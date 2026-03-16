@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://uke8yxtc8nrf"]
+[gd_scene load_steps=5 format=3 uid="uid://uke8yxtc8nrf"]
 
 [ext_resource type="PackedScene" uid="uid://0fmfekdgng3b" path="res://scenes/livers/_base/_base.tscn" id="1_17s8b"]
 [ext_resource type="Script" uid="uid://cbj1u4jbr2m5s" path="res://scenes/livers/player/player.gd" id="2_vk7r3"]
+[ext_resource type="PackedScene" uid="uid://bw8gyva5ewuqf" path="res://scenes/ui/touchbutton/touchbutton.tscn" id="3_82xk2"]
 [ext_resource type="Texture2D" uid="uid://c53gn6vfynorr" path="res://assets/livers/player.png" id="3_jipv1"]
 
 [node name="Player" groups=["player"] instance=ExtResource("1_17s8b")]
@@ -9,56 +10,29 @@ script = ExtResource("2_vk7r3")
 
 [node name="Control" type="CanvasLayer" parent="." index="0"]
 
-[node name="up" type="Button" parent="Control" index="0"]
-anchors_preset = -1
-anchor_right = 0.016
-anchor_bottom = 0.029
-offset_left = 931.0
-offset_top = 506.0
-offset_right = 961.568
-offset_bottom = 537.208
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
+[node name="up" parent="Control" index="0" instance=ExtResource("3_82xk2")]
+position = Vector2(765, 575)
+scale = Vector2(2, 2.685)
+action = "up"
 text = "UP"
 
-[node name="down" type="Button" parent="Control" index="1"]
-anchors_preset = -1
-anchor_right = 0.016
-anchor_bottom = 0.029
-offset_left = 906.0
-offset_top = 579.0
-offset_right = 993.568
-offset_bottom = 610.208
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "DOWN
-"
+[node name="down" parent="Control" index="1" instance=ExtResource("3_82xk2")]
+position = Vector2(946, 577)
+scale = Vector2(2, 2.685)
+action = "down"
+text = "DOWN"
 
-[node name="right" type="Button" parent="Control" index="2"]
-anchors_preset = -1
-anchor_right = 0.016
-anchor_bottom = 0.029
-offset_left = 267.0
-offset_top = 590.0
-offset_right = 346.568
-offset_bottom = 621.208
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "RIGHT
-"
+[node name="right" parent="Control" index="2" instance=ExtResource("3_82xk2")]
+position = Vector2(171, 566)
+scale = Vector2(2, 2.685)
+action = "right"
+text = "RIGHT"
 
-[node name="left" type="Button" parent="Control" index="3"]
-anchors_preset = -1
-anchor_right = 0.016
-anchor_bottom = 0.029
-offset_left = 30.0
-offset_top = 596.0
-offset_right = 106.128
-offset_bottom = 627.208
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "LEFT
-"
+[node name="left" parent="Control" index="3" instance=ExtResource("3_82xk2")]
+position = Vector2(16, 571)
+scale = Vector2(2, 2.685)
+action = "left"
+text = "LEFT"
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_jipv1")

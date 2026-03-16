@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw8gyva5ewuqf"]
+
+[ext_resource type="Texture2D" uid="uid://2wwyr03gdnk2" path="res://assets/ui/touchbutton/normal.png" id="1_x3li3"]
+[ext_resource type="Texture2D" uid="uid://chh0fvds7wosx" path="res://assets/ui/touchbutton/pressed.png" id="2_ew5ko"]
+[ext_resource type="Script" uid="uid://gvlsnbvgen3d" path="res://scenes/ui/touchbutton/touchbutton.gd" id="3_nuqmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2p32"]
+size = Vector2(50, 20)
+
+[node name="Touchbutton" type="TouchScreenButton"]
+scale = Vector2(1, 1.45)
+texture_normal = ExtResource("1_x3li3")
+texture_pressed = ExtResource("2_ew5ko")
+shape = SubResource("RectangleShape2D_r2p32")
+script = ExtResource("3_nuqmb")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 50.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true

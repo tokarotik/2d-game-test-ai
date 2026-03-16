@@ -13,8 +13,8 @@ func _ready() -> void:
 
 func _process(_e) -> void:
 	var input = get_keyboard_input()
-	if input == Vector2.ZERO:
-		input = get_buttons_input()
+	#if input == Vector2.ZERO:
+	#	input = get_buttons_input()
 
 	var vel = input * SPEED
 	velocity = vel

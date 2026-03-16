@@ -11,12 +11,9 @@ var target
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var tname = area.name
-	print(tname)
 	if tname in TARGETS_LIST:
-		print(tname)
 		target = area.get_parent()
-		print(target)
-		return
+
 		await get_tree().create_timer(1).timeout
 		#$Area2D.disconnect('area_entered', _on_area_2d_area_entered)
 		if $Area2D == null: return
