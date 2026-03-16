@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://gvlsnbvgen3d" path="res://scenes/ui/touchbutton/touchbutton.gd" id="3_nuqmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2p32"]
-size = Vector2(65, 35)
+size = Vector2(85, 45)
 
 [node name="Touchbutton" type="TouchScreenButton"]
 scale = Vector2(1, 1.45)
