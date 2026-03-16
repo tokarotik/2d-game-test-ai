@@ -31,10 +31,10 @@ func spawn_livers():
 	_spawnLivers(enemies_tiles, ENEMY, 0)
 	
 func _spawnLivers(tiles: Dictionary, liverScene: Resource, tile_id: int):
-	var livers = tiles.get(tile_id)
-	if livers == null: return
+	var tiles_livers = tiles.get(tile_id)
+	if tiles_livers == null: return
 	
-	for coords in livers:
+	for coords in tiles_livers:
 		_spawnLiver(liverScene, Vector2(coords) * 64)
 	
 func _spawnLiver(scene: Resource, pos: Vector2) -> void:

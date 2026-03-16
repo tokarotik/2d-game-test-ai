@@ -1,14 +1,15 @@
 extends "res://scenes/livers/_base/_base.gd"
 
 @onready var camera = $Camera2D
-@onready var ui = $Camera2D/Control
-@onready var buttons_x = [$Camera2D/Control/left, $Camera2D/Control/right]
-@onready var buttons_y = [$Camera2D/Control/up, $Camera2D/Control/down]
+@onready var ui = $Control
+@onready var buttons_x = [$Control/left, $Control/right]
+@onready var buttons_y = [$Control/up, $Control/down]
 
 var SPEED = 250
 
 func _ready() -> void:
-	ui.reparent(get_tree().get_root().get_children()[0])
+	super._ready()
+	#ui.reparent(get_tree().get_root().get_children()[0])
 
 func _process(_e) -> void:
 	var input = get_keyboard_input()
@@ -18,11 +19,8 @@ func _process(_e) -> void:
 	var vel = input * SPEED
 	velocity = vel
 	move_and_slide()
-	
-	ui.position = global_position - (ui.get_rect().size / 2)
 
 func set_camera_borders(level_rect: Rect2) -> void:
-	return
 	camera.limit_left = level_rect.position.x
 	camera.limit_top = level_rect.position.y
 	camera.limit_right = level_rect.position.x + level_rect.size.x

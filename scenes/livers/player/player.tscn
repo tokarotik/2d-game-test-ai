@@ -7,70 +7,59 @@
 [node name="Player" groups=["player"] instance=ExtResource("1_17s8b")]
 script = ExtResource("2_vk7r3")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_jipv1")
+[node name="Control" type="CanvasLayer" parent="." index="0"]
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
-position = Vector2(-2, 0)
-zoom = Vector2(0.8, 0.8)
-position_smoothing_enabled = true
-editor_draw_drag_margin = true
-
-[node name="Control" type="Control" parent="Camera2D" index="0"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -724.0
-offset_top = -538.0
-offset_right = 723.0
-offset_bottom = 520.0
-
-[node name="up" type="Button" parent="Camera2D/Control" index="0"]
-layout_mode = 1
+[node name="up" type="Button" parent="Control" index="0"]
 anchors_preset = -1
 anchor_right = 0.016
 anchor_bottom = 0.029
-offset_left = 1016.0
-offset_top = 849.0
-offset_right = 1041.85
-offset_bottom = 868.318
+offset_left = 931.0
+offset_top = 506.0
+offset_right = 961.568
+offset_bottom = 537.208
 theme_override_font_sizes/font_size = 30
 text = "UP"
 
-[node name="down" type="Button" parent="Camera2D/Control" index="1"]
-layout_mode = 1
+[node name="down" type="Button" parent="Control" index="1"]
 anchors_preset = -1
 anchor_right = 0.016
 anchor_bottom = 0.029
-offset_left = 270.0
-offset_top = 840.0
-offset_right = 346.128
-offset_bottom = 859.318
+offset_left = 906.0
+offset_top = 579.0
+offset_right = 993.568
+offset_bottom = 610.208
 theme_override_font_sizes/font_size = 30
 text = "DOWN
 "
 
-[node name="right" type="Button" parent="Camera2D/Control" index="2"]
-layout_mode = 1
+[node name="right" type="Button" parent="Control" index="2"]
 anchors_preset = -1
 anchor_right = 0.016
 anchor_bottom = 0.029
-offset_left = 1311.0
-offset_top = 840.0
-offset_right = 1387.13
-offset_bottom = 859.318
+offset_left = 267.0
+offset_top = 590.0
+offset_right = 346.568
+offset_bottom = 621.208
 theme_override_font_sizes/font_size = 30
 text = "RIGHT
 "
 
-[node name="left" type="Button" parent="Camera2D/Control" index="3"]
-layout_mode = 1
+[node name="left" type="Button" parent="Control" index="3"]
 anchors_preset = -1
 anchor_right = 0.016
 anchor_bottom = 0.029
-offset_left = 20.0
-offset_top = 835.0
-offset_right = 96.128
-offset_bottom = 854.318
+offset_left = 30.0
+offset_top = 596.0
+offset_right = 106.128
+offset_bottom = 627.208
 theme_override_font_sizes/font_size = 30
 text = "LEFT
 "
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_jipv1")
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
