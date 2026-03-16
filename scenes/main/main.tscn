@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://n1h3ag8g0gim"]
+
+[ext_resource type="PackedScene" uid="uid://d170sxr85kup7" path="res://scenes/map/map.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://dfusnmd5gmtc0" path="res://scenes/main/main.gd" id="1_iuonh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_iuonh")
+
+[node name="Map" parent="." instance=ExtResource("1_hyk8p")]
+
+[node name="camera_border" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -259.0
+offset_top = -131.0
+offset_right = 1413.0
+offset_bottom = 900.0

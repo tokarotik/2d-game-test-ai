@@ -1,0 +1,65 @@
+[gd_scene load_steps=15 format=4 uid="uid://d170sxr85kup7"]
+
+[ext_resource type="Script" uid="uid://imjtmal2486s" path="res://scenes/map/map.gd" id="1_fcby6"]
+[ext_resource type="Texture2D" uid="uid://dgiyutdk4gxgb" path="res://assets/tiles/walls.png" id="1_sxf4j"]
+[ext_resource type="Texture2D" uid="uid://cu4k60u6aqxmq" path="res://assets/livers/enemy.png" id="2_ph54e"]
+[ext_resource type="Texture2D" uid="uid://t2jjb0xxawpx" path="res://assets/livers/ai.png" id="3_fcby6"]
+[ext_resource type="Texture2D" uid="uid://c53gn6vfynorr" path="res://assets/livers/player.png" id="4_jcaow"]
+[ext_resource type="Texture2D" uid="uid://83t0d8k7frjg" path="res://assets/livers/particle.png" id="6_jcaow"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqkkf"]
+texture = ExtResource("1_sxf4j")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_a2pkv"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tqkkf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04w0f"]
+texture = ExtResource("2_ph54e")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sqgf4"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_04w0f")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvrx0"]
+texture = ExtResource("3_fcby6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f17u5"]
+texture = ExtResource("4_jcaow")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqgf4"]
+texture = ExtResource("6_jcaow")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b56te"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_vvrx0")
+sources/1 = SubResource("TileSetAtlasSource_f17u5")
+sources/2 = SubResource("TileSetAtlasSource_sqgf4")
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_fcby6")
+
+[node name="walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD7/w4AAAAAAAAAAAD8/w4AAAAAAAAAAAD9/w4AAAAAAAAAAAD+/w4AAAAAAAAAAAD//w4AAAAAAAAAAAAAAA4AAAAAAAAAAAABAA4AAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAARAA4AAAAAAAAAAAASAA4AAAAAAAAAAAATAA4AAAAAAAAAAAAUAA4AAAAAAAAAAAAVAA4AAAAAAAAAAAAWAA4AAAAAAAAAAAAWAA0AAAAAAAAAAAAWAAwAAAAAAAAAAAAWAAsAAAAAAAAAAAAWAAoAAAAAAAAAAAAWAAkAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAUAAAAAAAAAAAAWAAQAAAAAAAAAAAAWAAMAAAAAAAAAAAAWAAIAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAP//AAAAAAAAAAAWAP7/AAAAAAAAAAAWAP3/AAAAAAAAAAAVAP3/AAAAAAAAAAAUAP3/AAAAAAAAAAATAP3/AAAAAAAAAAASAP3/AAAAAAAAAAARAP3/AAAAAAAAAAAQAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAMAP3/AAAAAAAAAAALAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAAAAAD7/wYAAAAAAAAAAAD7/wcAAAAAAAAAAAD7/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD7/woAAAAAAAAAAAD7/wsAAAAAAAAAAAD7/wwAAAAAAAAAAAD7/w0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_a2pkv")
+
+[node name="enemies" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_sqgf4")
+
+[node name="any" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAIAAcAAQAAAAAAAAAKAAcAAAAAAAAAAAD8/wwAAgAAAAAAAAD8/wsAAgAAAAAAAAD8/woAAgAAAAAAAAD8/wkAAgAAAAAAAAD8/wgAAgAAAAAAAAD8/wcAAgAAAAAAAAD8/wYAAgAAAAAAAAD8/wUAAgAAAAAAAAD8/wQAAgAAAAAAAAD8/wMAAgAAAAAAAAD8/wIAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAAVAP7/AgAAAAAAAAAVAP//AgAAAAAAAAAVAAAAAgAAAAAAAAAVAAEAAgAAAAAAAAAVAAIAAgAAAAAAAAAVAAMAAgAAAAAAAAAVAAQAAgAAAAAAAAAVAAUAAgAAAAAAAAAVAAYAAgAAAAAAAAAVAAcAAgAAAAAAAAAVAAgAAgAAAAAAAAAVAAkAAgAAAAAAAAAVAAoAAgAAAAAAAAAVAAsAAgAAAAAAAAAVAAwAAgAAAAAAAAAVAA0AAgAAAAAAAAD8/w0AAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_b56te")
+
+[node name="livers" type="Node2D" parent="."]
