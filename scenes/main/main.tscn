@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://n1h3ag8g0gim"]
+[gd_scene load_steps=4 format=3 uid="uid://n1h3ag8g0gim"]
 
 [ext_resource type="PackedScene" uid="uid://d170sxr85kup7" path="res://scenes/map/map.tscn" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://dfusnmd5gmtc0" path="res://scenes/main/main.gd" id="1_iuonh"]
+[ext_resource type="Script" uid="uid://n0iv7iulamip" path="res://scenes/main/camera_2d.gd" id="3_k2fmo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_iuonh")
@@ -15,3 +16,17 @@ offset_left = -259.0
 offset_top = -131.0
 offset_right = 1413.0
 offset_bottom = 900.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 331)
+enabled = false
+zoom = Vector2(0.4, 0.4)
+script = ExtResource("3_k2fmo")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 228.0
+offset_top = -376.0
+offset_right = 268.0
+offset_bottom = -277.0
+theme_override_font_sizes/font_size = 72
+text = "GaMe  O:3ER"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwr03rsuxjgfv"]
+
+[ext_resource type="PackedScene" uid="uid://0fmfekdgng3b" path="res://scenes/livers/_base/_base.tscn" id="1_8ynbq"]
+[ext_resource type="Texture2D" uid="uid://t2jjb0xxawpx" path="res://assets/livers/ai.png" id="2_8fm2n"]
+[ext_resource type="Script" uid="uid://8nc0k6jayady" path="res://scenes/livers/ai/ai.gd" id="2_c0jbo"]
+
+[node name="Ai" groups=["ai"] instance=ExtResource("1_8ynbq")]
+script = ExtResource("2_c0jbo")
+maxHealth = 100.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_8fm2n")
+
+[node name="ColorRect" parent="attack/node" index="0"]
+color = Color(0.414, 0.4617, 1, 1)

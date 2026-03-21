@@ -9,23 +9,27 @@ extends Node2D
 var PLAYER = preload("res://scenes/livers/player/player.tscn")
 var ENEMY = preload("res://scenes/livers/enemy/enemy.tscn")
 var PARTICLE = preload("res://scenes/livers/particle/particle.tscn")
+var AI = preload("res://scenes/livers/ai/ai.tscn")
 
 func _ready() -> void:
 	enemies.visible = false
 	any.visible = false
 
 	
-func init(cameraBorders: Rect2) -> void:
+func init(cameraBorders: Rect2, worldCamera: Camera2D) -> void:
 	spawn_livers()
 	
 	for i in livers.get_children():
 		if i.has_method('set_camera_borders'):
 			i.call('set_camera_borders', cameraBorders)
+		if i.has_method('set_camera_on_death'):
+			i.call('set_camera_on_death', worldCamera)
 
 func spawn_livers():
 	var any_tiles = get_tiles(any)
 	var enemies_tiles = get_tiles(enemies)
 	
+	_spawnLivers(any_tiles, AI, 0)
 	_spawnLivers(any_tiles, PLAYER, 1)
 	_spawnLivers(any_tiles, PARTICLE, 2)
 	_spawnLivers(enemies_tiles, ENEMY, 0)

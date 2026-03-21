@@ -6,11 +6,18 @@
 
 [node name="Player" groups=["player"] instance=ExtResource("1_17s8b")]
 script = ExtResource("2_vk7r3")
+maxLenghtDamage = 85.0
+damage = 0.6
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_jipv1")
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
+
+[node name="ColorRect" parent="attack/node" index="0"]
+color = Color(0.87724, 0.810129, 0.0947043, 1)
+
+[connection signal="death_call" from="." to="." method="_on_death_call"]
